@@ -30,6 +30,16 @@ export const indexQues = (user) => {
   })
 }
 
+export const indexAllQues = (user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
 export const showQues = (id, user) => {
   return axios({
     method: 'GET',

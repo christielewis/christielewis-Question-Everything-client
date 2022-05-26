@@ -13,15 +13,19 @@ import ChangePassword from './components/auth/ChangePassword'
 
 import CreateQues from './components/Questions/CreateQues'
 import IndexQues from './components/Questions/IndexQues'
+import IndexAllQues from './components/Questions/IndexAllQues'
 import ShowQues from './components/Questions/ShowQues'
 import UpdateQues from './components/Questions/UpdateQues'
+import CreateAns from './components/Answers/CreateAns'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      questions: [],
+      answers: []
     }
   }
 
@@ -114,9 +118,23 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
+            exact path='/'
+            render={() => (
+              <IndexAllQues msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
             exact path='/questions/:id'
             render={() => (
               <ShowQues msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/questions/:id/answers'
+            render={() => (
+              <CreateAns msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

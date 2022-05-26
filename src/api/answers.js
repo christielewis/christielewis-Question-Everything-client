@@ -2,6 +2,7 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const createAns = (data, user) => {
+  console.log(data)
   return axios({
     method: 'POST',
     url: apiUrl + '/answers',
@@ -10,7 +11,8 @@ export const createAns = (data, user) => {
     },
     data: {
       answer: {
-        text: data.text
+        text: data.text,
+        questionId: data.questionId
       }
     }
   })

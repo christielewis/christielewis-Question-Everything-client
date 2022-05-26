@@ -14,6 +14,7 @@ class ShowQues extends Component {
 
   componentDidMount () {
     const { match, user, msgAlert } = this.props
+    console.log(match)
 
     showQues(match.params.id, user)
       .then((res) => this.setState({ question: res.data.question }))
@@ -76,6 +77,11 @@ class ShowQues extends Component {
             <Button className='delBtn' onClick={this.handleDelete}>
               Delete
             </Button>
+          </>
+        )}
+        {user._id !== owner && (
+          <>
+            <Button className='ansBtn' onClick={() => history.push(`/questions/${match.params.id}/answers`)}>Answer</Button>
           </>
         )}
       </div>
