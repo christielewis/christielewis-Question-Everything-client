@@ -26,7 +26,7 @@ class UpdateQues extends Component {
           topic: res.data.question.topic,
           description: res.data.question.description,
           season: res.data.question.season,
-          episode: res.data.episode.date
+          episode: res.data.question.episode
         })
       )
       .then(() => {

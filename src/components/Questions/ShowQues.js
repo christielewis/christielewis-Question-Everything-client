@@ -79,11 +79,11 @@ class ShowQues extends Component {
             </Button>
           </>
         )}
-        {user._id !== owner && (
+        {/* {user._id !== owner && (
           <>
             <Button className='ansBtn' onClick={() => history.push(`/questions/${match.params.id}/answers`)}>Answer</Button>
           </>
-        )}
+        )} */}
       </div>
     )
   }

@@ -16,7 +16,7 @@ import IndexQues from './components/Questions/IndexQues'
 import IndexAllQues from './components/Questions/IndexAllQues'
 import ShowQues from './components/Questions/ShowQues'
 import UpdateQues from './components/Questions/UpdateQues'
-import CreateAns from './components/Answers/CreateAns'
+// import CreateAns from './components/Answers/CreateAns'
 
 class App extends Component {
   constructor (props) {
@@ -128,13 +128,20 @@ class App extends Component {
               <ShowQues msgAlert={this.msgAlert} user={user} />
             )}
           />
-          <AuthenticatedRoute
+          {/* <AuthenticatedRoute
             user={user}
             path='/questions/:id/answers'
             render={() => (
               <CreateAns msgAlert={this.msgAlert} user={user} />
             )}
-          />
+          /> */}
+          {/* <AuthenticatedRoute
+            user={user}
+            path='/questions/:id'
+            render={() => (
+              <ShowAns msgAlert={this.msgAlert} user={user} />
+            )}
+          /> */}
         </main>
       </Fragment>
     )
