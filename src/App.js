@@ -11,6 +11,11 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
+import CreateQues from './components/Questions/CreateQues'
+import IndexQues from './components/Questions/IndexQues'
+import ShowQues from './components/Questions/ShowQues'
+import UpdateQues from './components/Questions/UpdateQues'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -84,6 +89,34 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/create-question'
+            render={() => (
+              <CreateQues msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/questions/:id/update'
+            render={() => (
+              <UpdateQues msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/questions'
+            render={() => (
+              <IndexQues msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/questions/:id'
+            render={() => (
+              <ShowQues msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

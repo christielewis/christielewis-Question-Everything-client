@@ -23,7 +23,7 @@ export const createQues = (data, user) => {
 export const indexQues = (user) => {
   return axios({
     method: 'GET',
-    url: apiUrl + '/questions/',
+    url: apiUrl + '/questions',
     headers: {
       Authorization: `Bearer ${user.token}`
     }

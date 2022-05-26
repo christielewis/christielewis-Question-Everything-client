@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { createQues } from '../../api/questions'
+import { showQues, updateQues } from '../../api/questions'
 
-class CreateQues extends Component {
+class UpdateQues extends Component {
   constructor (props) {
     super(props)
 
@@ -17,30 +17,57 @@ class CreateQues extends Component {
     }
   }
 
-  handleChange = (event) => {
+  componentDidMount () {
+    const { match, user, msgAlert } = this.props
+    showQues(match.params.id, user)
+      .then((res) =>
+        this.setState({
+          title: res.data.question.title,
+          topic: res.data.question.topic,
+          description: res.data.question.description,
+          season: res.data.question.season,
+          episode: res.data.episode.date
+        })
+      )
+      .then(() => {
+        msgAlert({
+          heading: 'Preloaded the update',
+          message: 'Worked',
+          variant: 'success'
+        })
+      })
+      .catch(() => {
+        msgAlert({
+          heading: 'Preloading the update failed',
+          message: 'Is not preloading it',
+          variant: 'danger'
+        })
+      })
+  }
+
+  handleChange = (event) =>
     this.setState({
       [event.target.name]: event.target.value
     })
-  }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const { user, msgAlert, history } = this.props
+    const { user, msgAlert, match, history } = this.props
 
-    createQues(this.state, user)
-      .then(() => history.push('/questions/'))
+    updateQues(match.params.id, this.state, user)
+      .then(() => history.push(`/questions/${match.params.id}`))
       .then(() => {
         msgAlert({
-          heading: 'Question Posted!',
-          message: 'Now, just wait on someone to answer.',
+          heading: 'Question updated',
+          message: 'You\'ve successfully update your question.',
           variant: 'success'
         })
       })
       .catch((error) => {
         msgAlert({
-          heading: 'Error Posting Question!',
-          message: 'Error: ' + error.message,
+          heading: 'Question update failed',
+          message: 'Question error: ' + error.message,
           variant: 'danger'
         })
       })
@@ -115,4 +142,4 @@ class CreateQues extends Component {
   }
 }
 
-export default withRouter(CreateQues)
+export default withRouter(UpdateQues)
