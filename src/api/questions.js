@@ -33,7 +33,7 @@ export const indexQues = (user) => {
 export const indexAllQues = (user) => {
   return axios({
     method: 'GET',
-    url: apiUrl + '/',
+    url: apiUrl + '/all',
     headers: {
       Authorization: `Bearer ${user.token}`
     }
