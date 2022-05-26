@@ -23,9 +23,7 @@ class App extends Component {
     super(props)
     this.state = {
       user: null,
-      msgAlerts: [],
-      questions: [],
-      answers: []
+      msgAlerts: []
     }
   }
 
