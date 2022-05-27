@@ -98,6 +98,10 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 * Updating Answers to Questions
 * Deleting Answers to Questions
 
+### Stretch Goals
+* Users will be able to view all answers they've written
+* Proper styling/customization of the application
+
 ### Setup/Installation
 
 If you want a copy of this repository:
