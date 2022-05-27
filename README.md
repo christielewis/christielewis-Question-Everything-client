@@ -90,10 +90,7 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 ![App](AppSS.png)
 
 ## WireFrame
-![WF](https://media.git.generalassemb.ly/user/42033/files/648c04c4-cbe2-49ae-af52-206e70d01ce3)
-
-## Entity-Relationship Diagram
-![ERD](https://media.git.generalassemb.ly/user/42033/files/184e1299-1740-4b6b-bc1a-478eed6aa023)
+![WF](Proj3WF.jpg)
 
 ### Unsolved Problems
 * Indexing Answers to Questions
