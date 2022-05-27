@@ -22,13 +22,13 @@ class CreateAns extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(this.props)
+    // console.log(this.props)
     // console.log(this.state.questionId)
     const { user, msgAlert, history } = this.props
 
     createAns(this.state, user) // must add question id
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         return res
       })
       .then(() => history.push(`/questions/${this.state.questionId}`))

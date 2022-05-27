@@ -16,7 +16,7 @@ class IndexAllQues extends Component {
 
     indexAllQues(user)
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         return res
       })
       .then((res) => this.setState({ questions: res.data.questions }))

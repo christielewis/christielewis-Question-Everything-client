@@ -14,7 +14,7 @@ class ShowQues extends Component {
 
   componentDidMount () {
     const { match, user, msgAlert } = this.props
-    console.log(match)
+    // console.log(match)
 
     showQues(match.params.id, user)
       .then((res) => this.setState({ question: res.data.question }))
