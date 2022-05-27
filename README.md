@@ -99,4 +99,11 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 * Deleting Answers to Questions
 
 #### Setup/Installation
-Just sign-up with an email and password and you are ready to go!
+
+If you want a copy of this repository:
+1. Fork and clone it.
+1. Install dependencies with `npm install`.
+1. `git add` and `git commit` your changes.
+1. Run the development server with `npm start`.
+
+If you simply want to use this application, use the [deployed site](https://christielewis.github.io/christielewis-Question-Everything-client/). Just sign-up with an email and password and you are ready to go!
