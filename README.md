@@ -99,7 +99,7 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 * Deleting Answers to Questions
 
 ### Stretch Goals
-* Users will be able to view all answers they've written
+* Make `answers` a fully CRUDable resource
 * Proper styling/customization of the application
 
 ### Setup/Installation
