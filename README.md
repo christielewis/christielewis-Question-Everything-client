@@ -101,6 +101,8 @@ I tackled bugs in a plethora of ways throughout in the development process. Some
 ### Stretch Goals
 * Make `answers` a fully CRUDable resource
 * Proper styling/customization of the application
+* Show which user asked which question
+* Show which user answered which question
 
 ### Setup/Installation
 
